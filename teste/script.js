@@ -26,6 +26,7 @@
 
 async function inicio() {
     const deckId = await createDeck();
+    // console.log(deckId)
     const cards = await drawCards(deckId, 16); // 4 jogadores x 4 cartas = 16 cartas
 
     // Verificar se as cartas têm a propriedade 'image'
