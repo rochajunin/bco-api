@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baralho Parcial</title>
+    <script src="script.js"></script>
+    <style>
+        body {
+            background: url("https://assets.codepen.io/74045/green.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+        #cards-container{
+            background-color: red;
+            width: fit-content;
+            display: flex;
+            margin-top: 150px;
+            flex-wrap: wrap;
+        }
+        #monte{
+            width:min-content;
+
+        }
+        .player{
+            height: 400px;
+        }
+        .cards{
+            width: 800px;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .fundo-box{
+            height: 7px;
+        }
+        
+        
+        /* body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }*/
+        .card {
+            margin: 5px;
+            width: 100px;
+            height: 140px;
+            background-color: #fff;
+            border: 1px solid #000;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 130px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        /*.card img {
+            max-width: 100%;
+            max-height: 100%;
+        } */
+    </style>
+</head>
+<body>
+    <!-- <h1>Baralho Parcial (Sem 8, 9 e 10)</h1> -->
+    
+    <div id="monte">
+        <!-- <div class="fundo-box"></div> -->
+    </div>
+
+    <div id="cards-container">
+        <div id="player1" class="player">
+            <h3>Jogador 1</h3>
+            <div class="cards" id="player1-cards"></div>
+        </div>
+    
+        <div id="player2" class="player">
+            <h3>Jogador 2</h3>
+            <div class="cards" id="player2-cards"></div>
+        </div>
+    
+        <div id="player3" class="player">
+            <h3>Jogador 3</h3>
+            <div class="cards" id="player3-cards"></div>
+        </div>
+    
+        <div id="player4" class="player">
+            <h3>Jogador 4</h3>
+            <div class="cards" id="player4-cards"></div>
+        </div>
+
+        <button onclick="inicio()">Distribuir Cartas</button>
+    </div>
+
+
+    
+
+    <script>
+        fundo()
+        function fundo(){
+            // let monte = document.getElementById("monte")
+            let fundos = ``
+            
+            for (let i = 0; i < 20; i++) {
+                fundos += `
+                    <div class="fundo-box">
+                        <img src="https://deckofcardsapi.com/static/img/back.png" alt="" id="fundo">
+                    </div>`
+                
+            }
+            document.getElementById("monte").innerHTML = fundos
+        }
+
+
+
+        // async function createDeck() {
+        //     const response = await fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1');
+        //     const data = await response.json();
+        //     return data.deck_id;
+        // }
+
+        // async function drawAndFilterDeck(deckId) {
+        //     // Desenha todas as 52 cartas do baralho
+        //     const response = await fetch(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=52`);
+        //     const data = await response.json();
+
+        //     // Filtra as cartas removendo 8, 9 e 10
+        //     const filteredCards = data.cards.filter(card => !['8', '9', '10'].includes(card.value));
+        //     return filteredCards;
+        // }
+
+        // async function display(params) {
+            
+        // }
+
+        // async function displayCards() {
+        //     const deckId = await createDeck();
+        //     const filteredCards = await drawAndFilterDeck(deckId);
+
+        //     const cardsContainer = document.getElementById('cards-container');
+        //     cardsContainer.innerHTML = ''; // Limpa qualquer conteúdo anterior
+
+        //     // Exibe as cartas filtradas
+        //     filteredCards.forEach(card => {
+        //         const cardDiv = document.createElement('div');
+        //         cardDiv.classList.add('card');
+        //         cardDiv.innerHTML = `
+                    
+        //             <img src="${card.image}" alt="${card.value} de ${card.suit}">
+        //         `;
+        //         // <p>${card.value}</p> //valor de cima
+        //         //     <p>${card.suit}</p>
+        //         cardsContainer.appendChild(cardDiv);
+        //     });
+        // }
+
+        // displayCards();
+
+        // async function baralho_fundo() {
+        //     const deckId = await createDeck();
+        //     const filteredCards = await drawAndFilterDeck(deckId);
+
+        //     const cardsContainer = document.getElementById('cards-container');
+        //     cardsContainer.innerHTML = ''; // Limpa qualquer conteúdo anterior
+
+        //     // Exibe as cartas filtradas
+        //     filteredCards.forEach(card => {
+        //         const cardDiv = document.createElement('div');
+        //         cardDiv.classList.add('card');
+        //         cardDiv.innerHTML = `
+                    
+        //             <img src="${card.image}" alt="${card.value} de ${card.suit}">
+        //         `;
+        //         // <p>${card.value}</p> //valor de cima
+        //         //     <p>${card.suit}</p>
+        //         cardsContainer.appendChild(cardDiv);
+        //     });
+        // }
+
+        // baralho_fundo()
+    </script>
+</body>
+</html>
